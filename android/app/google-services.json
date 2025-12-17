@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "762514158358",
+    "project_id": "taxi-app-6817e",
+    "storage_bucket": "taxi-app-6817e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762514158358:android:6390b1b7683da549c79637",
+        "android_client_info": {
+          "package_name": "com.axios.darb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762514158358-mbf1o2oi17d9sas4da9i3t2mljj4901e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.axios.darb",
+            "certificate_hash": "236d79127a96e68e65aa55a0a2c9b1ac3f149e7e"
+          }
+        },
+        {
+          "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ExnizcqO56a9XKukZ8pHv94Jnvrkzjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762514158358-5h60m81084o42bj53ds17tuepai807ir.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cabme.driver.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762514158358:android:99335b45c1cd5739c79637",
+        "android_client_info": {
+          "package_name": "com.cabme.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ExnizcqO56a9XKukZ8pHv94Jnvrkzjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762514158358-5h60m81084o42bj53ds17tuepai807ir.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cabme.driver.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762514158358:android:1650b9f3a1951557c79637",
+        "android_client_info": {
+          "package_name": "com.darb.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762514158358-8akm0ppgh71g5asd5gfq5hd06jgeinfl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darb.driver",
+            "certificate_hash": "236d79127a96e68e65aa55a0a2c9b1ac3f149e7e"
+          }
+        },
+        {
+          "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ExnizcqO56a9XKukZ8pHv94Jnvrkzjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762514158358-3ff8a3nhlhovpegnshd8fd3h8it4mlvk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "762514158358-5h60m81084o42bj53ds17tuepai807ir.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cabme.driver.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
