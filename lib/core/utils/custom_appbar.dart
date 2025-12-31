@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restart_tagxi/common/app_colors.dart';
 import 'package:restart_tagxi/core/utils/custom_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -33,10 +32,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: automaticallyImplyLeading ?? true,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      shape: const Border(
+      elevation: 0,
+      shadowColor: Colors.transparent,
+      shape: Border(
         bottom: BorderSide(
-          color: AppColors.grey, // change color here
-          width: 1, // thickness
+          color: Theme.of(context).dividerColor.withOpacity(0.1),
+          width: 1,
         ),
       ),
       title: Row(
@@ -50,7 +51,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             text: title,
             textStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: resolvedTextColor,
-                  // fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w700,
                   fontSize: titleFontSize ??
                       Theme.of(context).textTheme.titleLarge!.fontSize,
                 ),
@@ -60,8 +61,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       leading: (automaticallyImplyLeading != null && automaticallyImplyLeading!)
           ? IconButton(
-              icon: Icon(Icons.arrow_back,
-                  color: Theme.of(context).primaryColorDark),
+              icon: Icon(Icons.arrow_back_ios_new_rounded,
+                  color: Theme.of(context).primaryColorDark, size: 20),
               onPressed: onBackTap ?? () => Navigator.of(context).pop(),
             )
           : const SizedBox(),

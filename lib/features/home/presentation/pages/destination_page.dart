@@ -344,8 +344,15 @@ class _DestinationPageState extends State<DestinationPage> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 12, vertical: 8),
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).primaryColor,
-                                    borderRadius: BorderRadius.circular(20),
+                                    color: AppColors.primary,
+                                    borderRadius: BorderRadius.circular(16),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: AppColors.primary.withOpacity(0.3),
+                                        blurRadius: 8,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
                                   ),
                                   child: InkWell(
                                     onTap: () {
@@ -542,17 +549,13 @@ class _DestinationPageState extends State<DestinationPage> {
                               height: size.height * 0.075,
                               width: size.width * 0.075,
                               decoration: BoxDecoration(
-                                  color: Theme.of(context)
-                                      .disabledColor
-                                      .withAlpha((0.25 * 255).toInt()),
+                                  color: AppColors.primary.withOpacity(0.1),
                                   shape: BoxShape.circle),
                               alignment: Alignment.center,
                               child: Icon(
                                 Icons.location_pin,
                                 size: 20,
-                                color: Theme.of(context)
-                                    .disabledColor
-                                    .withAlpha((0.75 * 255).toInt()),
+                                color: AppColors.primary,
                               ),
                             ),
                             SizedBox(width: size.width * 0.025),
@@ -668,14 +671,18 @@ class _DestinationPageState extends State<DestinationPage> {
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: Theme.of(context)
-                                        .cardColor
-                                        .withOpacity(0.5),
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: Theme.of(context).cardColor,
                                     border: Border.all(
-                                        width: 0.3,
-                                        color:
-                                            Theme.of(context).disabledColor)),
+                                        width: 1.5,
+                                        color: Theme.of(context).dividerColor.withOpacity(0.2)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.03),
+                                        blurRadius: 4,
+                                        offset: const Offset(0, 1),
+                                      ),
+                                    ]),
                                 child: Row(
                                   children: [
                                     SizedBox(width: size.width * 0.03),
@@ -938,8 +945,15 @@ class _DestinationPageState extends State<DestinationPage> {
                       width: size.width * 0.33,
                       height: size.width * 0.09,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(16),
+                        color: AppColors.primary,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withOpacity(0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -1172,11 +1186,19 @@ class _DestinationPageState extends State<DestinationPage> {
                           child: Container(
                             margin: const EdgeInsets.only(right: 5),
                             decoration: BoxDecoration(
-                              border: Border.all(),
-                              color: Theme.of(context)
-                                  .disabledColor
-                                  .withAlpha((0.1 * 255).toInt()),
-                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Theme.of(context).dividerColor.withOpacity(0.2),
+                                width: 1.5,
+                              ),
+                              color: Theme.of(context).cardColor,
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -1393,18 +1415,14 @@ class _DestinationPageState extends State<DestinationPage> {
                             height: size.height * 0.075,
                             width: size.width * 0.075,
                             decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .disabledColor
-                                  .withAlpha((0.1 * 255).toInt()),
+                              color: AppColors.primary.withOpacity(0.1),
                               shape: BoxShape.circle,
                             ),
                             alignment: Alignment.center,
                             child: Icon(
                               Icons.location_pin,
                               size: 20,
-                              color: Theme.of(context)
-                                  .disabledColor
-                                  .withAlpha((0.75 * 255).toInt()),
+                              color: AppColors.primary,
                             ),
                           ),
                           SizedBox(width: size.width * 0.025),

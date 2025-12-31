@@ -295,7 +295,7 @@ class HomeBodyWidget extends StatelessWidget {
 
                     if (homeBloc.confirmPinAddress)
                       Positioned(
-                        top: screenWidth * 0.09,
+                        top: - screenWidth * 0.11,
                         right: screenWidth * 0.38,
                         child: Container(
                           height: size.height * 0.8,
@@ -369,13 +369,21 @@ class HomeBodyWidget extends StatelessWidget {
                       PopupMenuButton<MapType>(
                         color: AppColors.white,
                         icon: Container(
-                          padding: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black, width: 1),
+                            border: Border.all(color: Colors.black, width: 1.5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.15),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                                spreadRadius: 0,
+                              ),
+                            ],
                           ),
-                          child: const Icon(Icons.layers, color: Colors.black),
+                          child: Icon(Icons.layers, color: AppColors.primary, size: 20),
                         ),
                         onSelected: (mapType) {
                           homeBloc.add(UpdateMapTypeEvent(mapType));
@@ -413,22 +421,30 @@ class HomeBodyWidget extends StatelessWidget {
                         homeBloc.add(LocateMeEvent(mapType: homeBloc.mapType));
                       },
                       child: Container(
-                        height: size.width * 0.11,
-                        width: size.width * 0.11,
+                        height: size.width * 0.12,
+                        width: size.width * 0.12,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.white,
                           border: Border.all(
-                            width: 1.2,
+                            width: 1.5,
                             color:
                                 AppColors.black.withAlpha((0.8 * 255).toInt()),
                           ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.15),
+                              blurRadius: 12,
+                              offset: const Offset(0, 4),
+                              spreadRadius: 0,
+                            ),
+                          ],
                         ),
                         child: Center(
                           child: Icon(
                             Icons.my_location,
-                            size: size.width * 0.05,
-                            color: AppColors.black,
+                            size: size.width * 0.055,
+                            color: AppColors.primary,
                           ),
                         ),
                       ),
@@ -482,33 +498,39 @@ class HomeBodyWidget extends StatelessWidget {
                           width: size.width * 0.78,
                           decoration: BoxDecoration(
                             color: Theme.of(context).scaffoldBackgroundColor,
-                            borderRadius: BorderRadius.circular(5),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //       blurRadius: 3,
-                            //       spreadRadius: 2,
-                            //       color: Theme.of(context).shadowColor)
-                            // ],
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.08),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                                spreadRadius: 0,
+                              ),
+                            ],
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 6),
+                                horizontal: 12, vertical: 14),
                             child: Row(
                               children: [
                                 const PickupIcon(),
-                                SizedBox(width: size.width * 0.01),
-                                SizedBox(
-                                  width: size.width * 0.63,
+                                SizedBox(width: size.width * 0.02),
+                                Expanded(
                                   child: MyText(
                                       text: homeBloc.currentLocation,
                                       textStyle: Theme.of(context)
                                           .textTheme
-                                          .bodyMedium,
+                                          .bodyMedium!
+                                          .copyWith(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                       overflow: TextOverflow.ellipsis),
                                 ),
+                                SizedBox(width: size.width * 0.02),
                                 Icon(Icons.edit_outlined,
-                                    size: 18,
-                                    color: Theme.of(context).disabledColor),
+                                    size: 20,
+                                    color: AppColors.primary),
                               ],
                             ),
                           ),
@@ -568,12 +590,13 @@ class HomeBodyWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Theme.of(context).scaffoldBackgroundColor,
                             borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(30)),
+                                top: Radius.circular(32)),
                             boxShadow: [
                               BoxShadow(
-                                color: Theme.of(context).shadowColor,
-                                blurRadius: 5,
-                                spreadRadius: 1,
+                                color: Colors.black.withOpacity(0.1),
+                                blurRadius: 20,
+                                offset: const Offset(0, -4),
+                                spreadRadius: 0,
                               ),
                             ],
                           ),

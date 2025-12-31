@@ -128,7 +128,10 @@ class _LandingPageState extends State<LandingPage> {
                           textStyle: Theme.of(context)
                               .textTheme
                               .bodyLarge!
-                              .copyWith(fontSize: 26),
+                              .copyWith(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.5),
                         ),
                         SizedBox(height: size.height * 0.02),
                         MyText(
@@ -168,17 +171,25 @@ class _LandingPageState extends State<LandingPage> {
                             index;
 
                     return AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeInOutCubic,
                       margin: const EdgeInsets.symmetric(horizontal: 4),
-                      height: 8,
-                      width:
-                          isSelected ? 20 : 8, // ⭐ Active indicator = long pill
+                      height: isSelected ? 8 : 6,
+                      width: isSelected ? 32 : 8,
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? Theme.of(context).primaryColor // Active color
-                            : Colors.grey.shade400, // Inactive dot
+                            ? AppColors.primary
+                            : Colors.grey.shade400,
                         borderRadius: BorderRadius.circular(20),
+                        boxShadow: isSelected
+                            ? [
+                                BoxShadow(
+                                  color: AppColors.primary.withOpacity(0.4),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ]
+                            : null,
                       ),
                     );
                   },
@@ -249,7 +260,7 @@ class _LandingPageState extends State<LandingPage> {
         onTap: () => context.read<OnBoardingBloc>().add(SkipEvent()),
         textSize: 12,
         width: size.width,
-        borderRadius: 10,
+        borderRadius: 16,
       );
     } else {
       return const SizedBox();

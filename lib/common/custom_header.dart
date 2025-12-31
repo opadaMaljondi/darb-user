@@ -29,7 +29,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final resolvedTextColor =
-        textColor ?? Theme.of(context).textTheme.titleLarge!.color;
+      Theme.of(context).textTheme.titleLarge!.color;
     return AppBar(
       automaticallyImplyLeading: automaticallyImplyLeading ?? true,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -50,7 +50,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
             text: title,
             textStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: resolvedTextColor,
-                  // fontWeight: FontWeight.bold,
+                   fontWeight: FontWeight.bold,
                   fontSize: titleFontSize ??
                       Theme.of(context).textTheme.titleLarge!.fontSize,
                 ),

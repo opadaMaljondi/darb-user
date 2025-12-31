@@ -98,8 +98,8 @@ class SignupMobilePage extends StatelessWidget {
                           textAlign: TextAlign.center,
                           textStyle:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                  // fontWeight: FontWeight.w600,
-                                  fontSize: 26,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 28,
                                   color: Theme.of(context).primaryColorDark),
                         ),
                         SizedBox(
@@ -251,6 +251,7 @@ class SignupMobilePage extends StatelessWidget {
     return CustomTextField(
       controller: context.read<AuthBloc>().rMobileController,
       filled: true,
+      borderRadius: 16,
       fillColor: !context.read<AuthBloc>().isLoginByEmail
           ? Theme.of(context).brightness == Brightness.light
               ? Theme.of(context).disabledColor.withAlpha((0.1 * 255).toInt())
@@ -284,7 +285,7 @@ class SignupMobilePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: Theme.of(context).hintColor,
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(8),
                   image: (context.read<AuthBloc>().flagImage.isNotEmpty)
                       ? DecorationImage(
                           image:
@@ -332,7 +333,7 @@ class SignupMobilePage extends StatelessWidget {
         CustomTextField(
           controller: context.read<AuthBloc>().rEmailController,
           filled: true,
-          borderRadius: 10,
+          borderRadius: 16,
           fillColor: !context.read<AuthBloc>().isLoginByEmail
               ? Theme.of(context).brightness == Brightness.light
                   ? Theme.of(context)
@@ -372,7 +373,7 @@ class SignupMobilePage extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
           child: CustomButton(
-            borderRadius: 5,
+            borderRadius: 16,
             width: MediaQuery.sizeOf(context).width,
             buttonName: AppLocalizations.of(context)!.sendOtp,
             textSize: 16,

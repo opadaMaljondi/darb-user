@@ -50,6 +50,7 @@ class HelpPage extends StatelessWidget {
                 children: [
                   SizedBox(height: size.height * 0.03),
                   MenuOptions(
+                    margin: 5,
                       label: AppLocalizations.of(context)!.supportTicket,
                       icon: Icons.support,
                       onTap: () {
@@ -59,6 +60,7 @@ class HelpPage extends StatelessWidget {
                                 isFromRequest: false, requestId: ''));
                       }),
                   MenuOptions(
+                    margin: 5,
                     icon: Icons.chat,
                     label: AppLocalizations.of(context)!.chatWithUs,
                     onTap: () {

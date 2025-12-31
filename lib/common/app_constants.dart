@@ -7,7 +7,7 @@ import '../features/language/domain/models/language_listing_model.dart';
 
 class AppConstants {
   static const String title = 'Darb';
-  static const String baseUrl = 'https://darb.brandicc.com/';
+  static const String baseUrl = 'http://77.37.86.152:8080/';
   static String firbaseApiKey = (Platform.isAndroid)
       ? "AIzaSyA8ExnizcqO56a9XKukZ8pHv94Jnvrkzjg"
       : "AIzaSyA8ExnizcqO56a9XKukZ8pHv94Jnvrkzjg";
@@ -21,7 +21,7 @@ class AppConstants {
       : "taxi-app-6817e";
 
   static String mapKey =
-      (Platform.isAndroid) ? 'AIzaSyCqGjs9-0pnjcEXtHVF_3SGFnSh9wcgfw4' : 'AIzaSyCqGjs9-0pnjcEXtHVF_3SGFnSh9wcgfw4';
+      (Platform.isAndroid) ? 'AIzaSyA2qUtmctQby-4y7uRZOlkM9wOR8DhXis8' : 'AIzaSyA2qUtmctQby-4y7uRZOlkM9wOR8DhXis8';
   static const String stripPublishKey = '';
 
   static List<LocaleLanguageList> languageList = [

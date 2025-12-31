@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: size.width * 0.05,
+                        height: size.width * 0.08,
                       ),
                       MyText(
                         text: AppLocalizations.of(context)!.loginContent,
@@ -203,125 +203,168 @@ class _LoginPageState extends State<LoginPage>
                             .textTheme
                             .bodyLarge!
                             .copyWith(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 24, fontWeight: FontWeight.w700),
                         maxLines: 2,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
-                        height: size.width * 0.05,
+                        height: size.width * 0.08,
                       ),
                       if (context.read<AuthBloc>().isUserEmailLogin == '1' &&
                           context.read<AuthBloc>().isUserMobileLogin == '1')
                         Container(
                           decoration: BoxDecoration(
                             color: AppColors.borderColor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.05),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
                           ),
-                          height: size.width * 0.15,
-                          padding: EdgeInsets.all(size.width * 0.0125),
+                          height: size.width * 0.14,
+                          padding: EdgeInsets.all(size.width * 0.01),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              InkWell(
-                                onTap: () {
-                                  FocusScope.of(context).unfocus();
-                                  context.read<AuthBloc>().isOtpVerify = false;
-                                  context.read<AuthBloc>().add(
-                                      SelectLoginMethodEvent(
-                                          selectLoginByEmail: false));
-                                  context
-                                      .read<AuthBloc>()
-                                      .rEmailController
-                                      .clear();
-                                  context
-                                      .read<AuthBloc>()
-                                      .passwordController
-                                      .clear();
-                                  context
-                                      .read<AuthBloc>()
-                                      .otpController
-                                      .clear();
-                                },
-                                child: Container(
-                                    width: size.width * 0.42,
-                                    decoration: BoxDecoration(
-                                      color: (context
-                                                  .read<AuthBloc>()
-                                                  .selectLoginMethods ==
-                                              false)
-                                          ? AppColors.black
-                                          : Colors.transparent,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: MyText(
-                                      text:
-                                          AppLocalizations.of(context)!.mobile,
-                                      textStyle: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium!
-                                          .copyWith(
-                                              fontSize: 16,
-                                              color: (context
-                                                          .read<AuthBloc>()
-                                                          .selectLoginMethods ==
-                                                      false)
-                                                  ? AppColors.white
-                                                  : AppColors.hintColor),
-                                    )),
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {
+                                    FocusScope.of(context).unfocus();
+                                    context.read<AuthBloc>().isOtpVerify = false;
+                                    context.read<AuthBloc>().add(
+                                        SelectLoginMethodEvent(
+                                            selectLoginByEmail: false));
+                                    context
+                                        .read<AuthBloc>()
+                                        .rEmailController
+                                        .clear();
+                                    context
+                                        .read<AuthBloc>()
+                                        .passwordController
+                                        .clear();
+                                    context
+                                        .read<AuthBloc>()
+                                        .otpController
+                                        .clear();
+                                  },
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Container(
+                                      width: size.width * 0.42,
+                                      decoration: BoxDecoration(
+                                        color: (context
+                                                    .read<AuthBloc>()
+                                                    .selectLoginMethods ==
+                                                false)
+                                            ? AppColors.primary
+                                            : Colors.transparent,
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: (context
+                                                    .read<AuthBloc>()
+                                                    .selectLoginMethods ==
+                                                false)
+                                            ? [
+                                                BoxShadow(
+                                                  color: AppColors.primary
+                                                      .withOpacity(0.3),
+                                                  blurRadius: 8,
+                                                  offset: const Offset(0, 2),
+                                                ),
+                                              ]
+                                            : null,
+                                      ),
+                                      alignment: Alignment.center,
+                                      child: MyText(
+                                        text: AppLocalizations.of(context)!
+                                            .mobile,
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium!
+                                            .copyWith(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w600,
+                                                color: (context
+                                                            .read<AuthBloc>()
+                                                            .selectLoginMethods ==
+                                                        false)
+                                                    ? AppColors.white
+                                                    : AppColors.hintColor),
+                                      )),
+                                ),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  FocusScope.of(context).unfocus();
-                                  context.read<AuthBloc>().isOtpVerify = false;
-                                  context.read<AuthBloc>().add(
-                                      SelectLoginMethodEvent(
-                                          selectLoginByEmail: true));
-                                  context
-                                      .read<AuthBloc>()
-                                      .rMobileController
-                                      .clear();
-                                  context
-                                      .read<AuthBloc>()
-                                      .passwordController
-                                      .clear();
-                                  context
-                                      .read<AuthBloc>()
-                                      .otpController
-                                      .clear();
-                                },
-                                child: Container(
-                                    width: size.width * 0.42,
-                                    decoration: BoxDecoration(
-                                      color: (context
-                                                  .read<AuthBloc>()
-                                                  .selectLoginMethods ==
-                                              true)
-                                          ? AppColors.black
-                                          : Colors.transparent,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: MyText(
-                                      text: AppLocalizations.of(context)!.email,
-                                      textStyle: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium!
-                                          .copyWith(
-                                              fontSize: 16,
-                                              color: (context
-                                                          .read<AuthBloc>()
-                                                          .selectLoginMethods ==
-                                                      true)
-                                                  ? Colors.white
-                                                  : AppColors.hintColor),
-                                    )),
+                              SizedBox(width: size.width * 0.02),
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () {
+                                    FocusScope.of(context).unfocus();
+                                    context.read<AuthBloc>().isOtpVerify = false;
+                                    context.read<AuthBloc>().add(
+                                        SelectLoginMethodEvent(
+                                            selectLoginByEmail: true));
+                                    context
+                                        .read<AuthBloc>()
+                                        .rMobileController
+                                        .clear();
+                                    context
+                                        .read<AuthBloc>()
+                                        .passwordController
+                                        .clear();
+                                    context
+                                        .read<AuthBloc>()
+                                        .otpController
+                                        .clear();
+                                  },
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Container(
+                                      width: size.width * 0.42,
+                                      decoration: BoxDecoration(
+                                        color: (context
+                                                    .read<AuthBloc>()
+                                                    .selectLoginMethods ==
+                                                true)
+                                            ? AppColors.primary
+                                            : Colors.transparent,
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: (context
+                                                    .read<AuthBloc>()
+                                                    .selectLoginMethods ==
+                                                true)
+                                            ? [
+                                                BoxShadow(
+                                                  color: AppColors.primary
+                                                      .withOpacity(0.3),
+                                                  blurRadius: 8,
+                                                  offset: const Offset(0, 2),
+                                                ),
+                                              ]
+                                            : null,
+                                      ),
+                                      alignment: Alignment.center,
+                                      child: MyText(
+                                        text: AppLocalizations.of(context)!
+                                            .email,
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium!
+                                            .copyWith(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w600,
+                                                color: (context
+                                                            .read<AuthBloc>()
+                                                            .selectLoginMethods ==
+                                                        true)
+                                                    ? Colors.white
+                                                    : AppColors.hintColor),
+                                      )),
+                                ),
                               ),
                             ],
                           ),
                         ),
                       SizedBox(
-                        height: size.width * 0.05,
+                        height: size.width * 0.06,
                       ),
                       if (context.read<AuthBloc>().isUserEmailLogin == '1' &&
                           context.read<AuthBloc>().isUserMobileLogin ==
@@ -341,7 +384,7 @@ class _LoginPageState extends State<LoginPage>
                         buildMobileField(context, size)
                       ],
                       SizedBox(
-                        height: size.width * 0.05,
+                        height: size.width * 0.06,
                       ),
                       if (context.read<AuthBloc>().isUserEmailLogin == '1' &&
                           context.read<AuthBloc>().isUserMobileLogin ==
@@ -499,7 +542,7 @@ class _LoginPageState extends State<LoginPage>
         CustomTextField(
           controller: context.read<AuthBloc>().rMobileController,
           filled: true,
-          borderRadius: 10,
+          borderRadius: 16,
           fillColor: !context.read<AuthBloc>().isLoginByEmail
               ? Theme.of(context).brightness == Brightness.light
                   ? Theme.of(context)
@@ -586,7 +629,7 @@ class _LoginPageState extends State<LoginPage>
         CustomTextField(
           controller: context.read<AuthBloc>().rEmailController,
           filled: true,
-          borderRadius: 10,
+          borderRadius: 16,
           fillColor: !context.read<AuthBloc>().isLoginByEmail
               ? Theme.of(context).brightness == Brightness.light
                   ? Theme.of(context)
@@ -634,7 +677,7 @@ class _LoginPageState extends State<LoginPage>
           controller: context.read<AuthBloc>().passwordController,
           filled: true,
           obscureText: !context.read<AuthBloc>().showPassword,
-          borderRadius: 10,
+          borderRadius: 16,
           hintText: AppLocalizations.of(context)!.enterYourPassword,
           suffixIcon: InkWell(
             onTap: () {
@@ -834,18 +877,18 @@ class _LoginPageState extends State<LoginPage>
           animationType: AnimationType.fade,
           pinTheme: PinTheme(
             shape: PinCodeFieldShape.box,
-            borderRadius: BorderRadius.circular(12),
-            fieldHeight: 45,
-            fieldWidth: 45,
+            borderRadius: BorderRadius.circular(16),
+            fieldHeight: 56,
+            fieldWidth: 56,
             activeFillColor: Theme.of(context).scaffoldBackgroundColor,
             inactiveFillColor: Theme.of(context).scaffoldBackgroundColor,
-            inactiveColor: Theme.of(context).hintColor,
+            inactiveColor: Theme.of(context).hintColor.withOpacity(0.3),
             selectedFillColor: Theme.of(context).scaffoldBackgroundColor,
-            selectedColor: Theme.of(context).disabledColor,
-            selectedBorderWidth: 1,
-            inactiveBorderWidth: 1,
-            activeBorderWidth: 1,
-            activeColor: Theme.of(context).hintColor,
+            selectedColor: AppColors.primary,
+            selectedBorderWidth: 2,
+            inactiveBorderWidth: 1.5,
+            activeBorderWidth: 2,
+            activeColor: AppColors.primary,
           ),
           cursorColor: Theme.of(context).dividerColor,
           animationDuration: const Duration(milliseconds: 300),
@@ -926,7 +969,7 @@ class _LoginPageState extends State<LoginPage>
           child: ((context.read<AuthBloc>().isUserEmailLogin == '1' &&
                   context.read<AuthBloc>().isUserMobileLogin == '1'))
               ? CustomButton(
-                  borderRadius: 10,
+                  borderRadius: 16,
                   width: MediaQuery.sizeOf(context).width,
                   buttonName: ((context.read<AuthBloc>().selectLoginMethods ==
                                   true &&

@@ -167,11 +167,18 @@ class ProfileInfoPage extends StatelessWidget {
                                                                   size.width *
                                                                       0.085,
                                                               decoration:
-                                                                  const BoxDecoration(
+                                                                  BoxDecoration(
                                                                 shape: BoxShape
                                                                     .circle,
                                                                 color: AppColors
                                                                     .white,
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: Colors.black.withOpacity(0.1),
+                                                                    blurRadius: 8,
+                                                                    offset: const Offset(0, 2),
+                                                                  ),
+                                                                ],
                                                               ),
                                                               alignment:
                                                                   Alignment
@@ -184,11 +191,18 @@ class ProfileInfoPage extends StatelessWidget {
                                                                     size.width *
                                                                         0.075,
                                                                 decoration:
-                                                                    const BoxDecoration(
+                                                                    BoxDecoration(
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   color: AppColors
                                                                       .primary,
+                                                                  boxShadow: [
+                                                                    BoxShadow(
+                                                                      color: AppColors.primary.withOpacity(0.4),
+                                                                      blurRadius: 8,
+                                                                      offset: const Offset(0, 2),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                                 child:
                                                                     const Center(

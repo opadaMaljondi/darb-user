@@ -60,10 +60,11 @@ class SettingsPage extends StatelessWidget {
                         title: AppLocalizations.of(context)!.settings,
                         automaticallyImplyLeading: true,
                         titleFontSize: 18,
-                        textColor: AppColors.hintColorGrey,
+
                       ),
                       SizedBox(height: size.height * 0.03),
                       MenuOptions(
+                        margin: 5,
                         label: 'Theme',
                         icon: Theme.of(context).brightness == Brightness.dark
                             ? Icons.dark_mode
@@ -74,6 +75,7 @@ class SettingsPage extends StatelessWidget {
                       // If you comment this, also change in HomeBloc GetUserDetails change MapType
                       if (args.userData.enableMapAppearanceChange == '1')
                         MenuOptions(
+                          margin: 5,
                           label: AppLocalizations.of(context)!.mapAppearance,
                           icon: Icons.map,
                           onTap: () {
@@ -84,6 +86,7 @@ class SettingsPage extends StatelessWidget {
                           },
                         ),
                       MenuOptions(
+                        margin: 5,
                         label: AppLocalizations.of(context)!.faq,
                         icon: Icons.question_answer,
                         onTap: () {
@@ -94,6 +97,7 @@ class SettingsPage extends StatelessWidget {
                         },
                       ),
                       MenuOptions(
+                        margin: 5,
                         label:
                             AppLocalizations.of(context)!.privacyPolicyAccounts,
                         icon: Icons.privacy_tip,
@@ -105,6 +109,7 @@ class SettingsPage extends StatelessWidget {
                         },
                       ),
                       MenuOptions(
+margin: 5,
                         label: AppLocalizations.of(context)!.logout,
                         icon: Icons.logout,
                         onTap: () {
@@ -131,6 +136,7 @@ class SettingsPage extends StatelessWidget {
                         },
                       ),
                       MenuOptions(
+                        margin: 5,
                         label: AppLocalizations.of(context)!.deleteAccount,
                         textColor: AppColors.errorLight,
                         imagePath: AppImages.trash,

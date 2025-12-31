@@ -70,16 +70,16 @@ class _LoaderPageState extends State<LoaderPage> {
             return PopScope(
                 canPop: false,
                 child: Scaffold(
-                  backgroundColor: Theme.of(context).primaryColor,
+                  backgroundColor:Colors.black,
                   resizeToAvoidBottomInset: false,
                   body: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          AppImages.loader,
-                          width: size.width * 0.51,
-                          height: size.height * 0.51,
+                          AppImages.logo,
+                          width: size.width * 0.55,
+                          height: size.height * 0.55,
                         )
                       ],
                     ),

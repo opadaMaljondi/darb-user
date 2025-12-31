@@ -42,8 +42,16 @@ class BottomSheetWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).scaffoldBackgroundColor,
                 borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)),
+                    topLeft: Radius.circular(32),
+                    topRight: Radius.circular(32)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, -4),
+                    spreadRadius: 0,
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,10 +61,10 @@ class BottomSheetWidget extends StatelessWidget {
                     Center(
                         child: CustomDivider(
                             height: 5,
-                            width: size.width * 0.2,
+                            width: size.width * 0.15,
                             color: Theme.of(context)
                                 .dividerColor
-                                .withAlpha((0.4 * 255).toInt()))),
+                                .withOpacity(0.3))),
                     SizedBox(height: size.width * 0.02),
                   ],
                   if (homeBloc.isSheetAtTop)
@@ -66,7 +74,7 @@ class BottomSheetWidget extends StatelessWidget {
                     child: Container(
                       width: size.width,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(0),
                       ),
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -136,20 +144,19 @@ class BottomSheetWidget extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         color: Theme.of(context)
                                             .scaffoldBackgroundColor,
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius: BorderRadius.circular(16),
                                         border: Border.all(
                                           color: Theme.of(context)
-                                              .disabledColor
-                                              .withAlpha((0.5 * 255).toInt()),
+                                              .dividerColor
+                                              .withOpacity(0.2),
+                                          width: 1.5,
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Theme.of(context)
-                                                .shadowColor
-                                                .withAlpha((0.1 * 255).toInt()),
-                                            blurRadius: 15,
-                                            offset: const Offset(0, 1),
-                                            spreadRadius: 1,
+                                            color: Colors.black.withOpacity(0.08),
+                                            blurRadius: 12,
+                                            offset: const Offset(0, 4),
+                                            spreadRadius: 0,
                                           ),
                                         ],
                                       ),
@@ -160,17 +167,13 @@ class BottomSheetWidget extends StatelessWidget {
                                             height: size.width * 0.075,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
-                                              color: Theme.of(context)
-                                                  .disabledColor
-                                                  .withAlpha(
-                                                      (0.5 * 255).toInt()),
+                                              color: AppColors.primary,
                                             ),
                                             alignment: Alignment.center,
                                             child: Icon(
                                               Icons.search,
                                               size: 20,
-                                              color: Theme.of(context)
-                                                  .scaffoldBackgroundColor,
+                                              color: AppColors.white,
                                             ),
                                           ),
                                           SizedBox(width: size.width * 0.02),
@@ -212,10 +215,14 @@ class BottomSheetWidget extends StatelessWidget {
                                                 height: size.width * 0.075,
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
-                                                    color: AppColors.grey,
+                                                    color: AppColors.primary.withOpacity(0.1),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            15)),
+                                                            12),
+                                                    border: Border.all(
+                                                      color: AppColors.primary.withOpacity(0.3),
+                                                      width: 1,
+                                                    )),
                                                 child: Padding(
                                                   padding: const EdgeInsets
                                                       .symmetric(horizontal: 8),

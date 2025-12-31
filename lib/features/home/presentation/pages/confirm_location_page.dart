@@ -252,7 +252,7 @@ class _ConfirmLocationPageState extends State<ConfirmLocationPage>
             if (context.read<HomeBloc>().confirmPinAddress)
               Positioned(
                 child: Container(
-                  height: size.height * 0.8,
+                  height: size.height * 0.6,
                   alignment: Alignment.center,
                   child: Padding(
                     padding: EdgeInsets.only(bottom: size.width * 0.06),

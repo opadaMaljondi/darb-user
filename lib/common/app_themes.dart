@@ -12,6 +12,7 @@ class AppThemes {
       useMaterial3: true,
       brightness: Brightness.light,
       primaryColor: AppColors.primary,
+      cardColor:  AppColors.primary.withAlpha(5),
       primaryColorLight: AppColors.secondary,
       primaryColorDark: AppColors.black,
       scaffoldBackgroundColor: AppColors.white,

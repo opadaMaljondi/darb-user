@@ -113,7 +113,7 @@ class CustomTextField extends StatelessWidget {
         suffix: suffix,
         suffixIcon: suffixIcon,
         contentPadding: contentPadding ??
-            const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         hintText: hintText,
         hintStyle: hintTextStyle ??
             Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -122,6 +122,7 @@ class CustomTextField extends StatelessWidget {
                 color: Theme.of(context).hintColor),
         filled: filled ?? true,
         fillColor: fillColor ?? Theme.of(context).scaffoldBackgroundColor,
+        focusColor: AppColors.primary.withOpacity(0.1),
         errorStyle: TextStyle(
           color: AppColors.red.withAlpha((0.8 * 255).toInt()),
           fontWeight: FontWeight.bold,
@@ -152,14 +153,14 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderSide:
-                  BorderSide(color: Theme.of(context).hintColor, width: 1),
+                  BorderSide(color: AppColors.primary, width: 2),
               borderRadius: BorderRadius.circular(borderRadius),
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
               borderSide: BorderSide(
-                color: Theme.of(context).hintColor,
-                width: 1,
+                color: Theme.of(context).hintColor.withOpacity(0.3),
+                width: 1.5,
               ),
               borderRadius: BorderRadius.circular(borderRadius),
             ),

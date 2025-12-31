@@ -149,12 +149,13 @@ class AccountPage extends StatelessWidget {
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
-                                              fontSize: 14,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
                                               color: Theme.of(context)
                                                   .primaryColorDark,
                                             ),
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .personalInformation,
@@ -182,7 +183,7 @@ class AccountPage extends StatelessWidget {
                                           });
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .notifications,
@@ -192,7 +193,7 @@ class AccountPage extends StatelessWidget {
                                               NotificationPage.routeName);
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .history,
@@ -212,7 +213,7 @@ class AccountPage extends StatelessWidget {
                                               .userData!
                                               .showOutstationRideFeature ==
                                           '1') ...[
-                                        SizedBox(height: size.width * 0.05),
+                                        SizedBox(height: size.width * 0.03),
                                         MenuOptions(
                                           label: AppLocalizations.of(context)!
                                               .outStation,
@@ -226,7 +227,7 @@ class AccountPage extends StatelessWidget {
                                           },
                                         ),
                                       ],
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       if (context
                                               .read<AccBloc>()
                                               .userData!
@@ -253,7 +254,7 @@ class AccountPage extends StatelessWidget {
                                             );
                                           },
                                         ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .favoriteLocation,
@@ -284,7 +285,7 @@ class AccountPage extends StatelessWidget {
                                           );
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.03),
+                                      SizedBox(height: size.width * 0.04),
                                       MyText(
                                         text: AppLocalizations.of(context)!
                                             .benefits,
@@ -292,12 +293,13 @@ class AccountPage extends StatelessWidget {
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
-                                              fontSize: 14,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
                                               color: Theme.of(context)
                                                   .primaryColorDark,
                                             ),
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .referEarn,
@@ -316,7 +318,7 @@ class AccountPage extends StatelessWidget {
                                           );
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label:
                                             AppLocalizations.of(context)!.sos,
@@ -355,7 +357,7 @@ class AccountPage extends StatelessWidget {
                                           );
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.03),
+                                      SizedBox(height: size.width * 0.04),
                                       MyText(
                                         text: AppLocalizations.of(context)!
                                             .preferences,
@@ -363,12 +365,13 @@ class AccountPage extends StatelessWidget {
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
-                                              fontSize: 14,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
                                               color: Theme.of(context)
                                                   .primaryColorDark,
                                             ),
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .changeLanguage,
@@ -389,7 +392,7 @@ class AccountPage extends StatelessWidget {
                                           );
                                         },
                                       ),
-                                      SizedBox(height: size.width * 0.03),
+                                      SizedBox(height: size.width * 0.04),
                                       MyText(
                                         text: AppLocalizations.of(context)!
                                             .settings,
@@ -397,12 +400,13 @@ class AccountPage extends StatelessWidget {
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
-                                              fontSize: 14,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w700,
                                               color: Theme.of(context)
                                                   .primaryColorDark,
                                             ),
                                       ),
-                                      SizedBox(height: size.width * 0.05),
+                                      SizedBox(height: size.width * 0.03),
                                       MenuOptions(
                                         label: AppLocalizations.of(context)!
                                             .settings,

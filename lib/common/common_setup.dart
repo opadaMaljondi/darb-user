@@ -25,9 +25,11 @@ Future<void> commonSetup() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: AppColors.secondary,
-    statusBarIconBrightness: Brightness.light,
-    systemNavigationBarColor: Colors.black,
+    statusBarColor: Colors.transparent, // TOP BAR
+    systemNavigationBarColor: Colors.transparent, // BOTTOM BAR
+    systemNavigationBarDividerColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark, // Android icons
+    statusBarBrightness: Brightness.light, // iOS icons
   ));
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   ConnectivityService().initialize();

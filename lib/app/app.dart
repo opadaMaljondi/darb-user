@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               ? state.locale
               : const Locale('en');
           bool isDark =
-              (state is LocalizationInitialState) ? state.isDark : false;
+              (state is LocalizationInitialState) ? state.isDark : true;
           return GestureDetector(
             onTap: () {
               FocusScopeNode currentFocus = FocusScope.of(context);

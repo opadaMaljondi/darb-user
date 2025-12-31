@@ -20,6 +20,7 @@ class MenuOptions extends StatelessWidget {
   final String? imagePath;
   final Color? textColor;
   final Color? iconColor;
+  final double? margin;
   final Color? imageColor;
 
   const MenuOptions({
@@ -34,67 +35,102 @@ class MenuOptions extends StatelessWidget {
     this.imagePath,
     this.textColor,
     this.iconColor,
+    this.margin,
     this.imageColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      child: Column(
-        children: [
-          Row(
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          margin:margin!=null&&margin!=0? EdgeInsets.symmetric(vertical: margin!):null,
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.04,
+            vertical: size.width * 0.04,
+          ),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: Theme.of(context).dividerColor.withOpacity(0.1),
+              width: 1,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.03),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+                spreadRadius: 0,
+              ),
+            ],
+          ),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              if (icon != null)
+                Container(
+                  padding: EdgeInsets.all(size.width * 0.025),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    icon,
+                    color: AppColors.primary,
+                    size: size.width * 0.06,
+                  ),
+                ),
+              if (imagePath != null)
+                Container(
+                  padding: EdgeInsets.all(size.width * 0.025),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Image.asset(
+                    imagePath!,
+                    height: size.width * 0.05,
+                    width: size.width * 0.05,
+                    color: AppColors.primary,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              SizedBox(width: size.width * 0.04),
               Expanded(
-                child: Row(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (icon != null)
-                      Icon(icon, color: Theme.of(context).primaryColorDark),
-                    if (imagePath != null)
-                      Image.asset(
-                        imagePath!,
-                        height: size.width * 0.06,
-                        width: size.width * 0.06,
-                        color: Theme.of(context).primaryColorDark,
-                        fit: BoxFit.contain,
-                      ),
-                    SizedBox(width: size.width * 0.04),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MyText(
-                            text: label,
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                    color: textColor ??
-                                        Theme.of(context).primaryColorDark,
-                                    fontSize: 14),
-                          ),
-                          if (subtitle != null && subtitle!.isNotEmpty) ...[
-                            // const SizedBox(height: 4),
-                            MyText(
-                              text: subtitle!,
-                              textStyle: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .copyWith(
-                                    color: textColor ??
-                                        Theme.of(context).hintColor,
-                                    fontSize: 11,
-                                  ),
-                            ),
-                          ],
-                        ],
-                      ),
+                    MyText(
+                      text: label,
+                      textStyle: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(
+                              color: textColor ??
+                                  Theme.of(context).primaryColorDark,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600),
                     ),
+                    if (subtitle != null && subtitle!.isNotEmpty) ...[
+                      SizedBox(height: size.width * 0.01),
+                      MyText(
+                        text: subtitle!,
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .bodySmall!
+                            .copyWith(
+                              color: textColor ??
+                                  Theme.of(context).hintColor,
+                              fontSize: 12,
+                            ),
+                      ),
+                    ],
                   ],
                 ),
               ),
@@ -134,16 +170,14 @@ class MenuOptions extends StatelessWidget {
                   onChanged: null, // disables the switch if false
                 ),
               if (!showTheme! && !showroute!)
-                const Icon(
+                Icon(
                   Icons.chevron_right,
-                  color: AppColors.hintColor,
+                  color: AppColors.hintColor.withOpacity(0.5),
+                  size: 24,
                 ),
             ],
           ),
-          SizedBox(
-            height: size.width * 0.05,
-          )
-        ],
+        ),
       ),
     );
   }
