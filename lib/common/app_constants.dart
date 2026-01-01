@@ -21,7 +21,7 @@ class AppConstants {
       : "taxi-app-6817e";
 
   static String mapKey =
-      (Platform.isAndroid) ? 'AIzaSyA2qUtmctQby-4y7uRZOlkM9wOR8DhXis8' : 'AIzaSyA2qUtmctQby-4y7uRZOlkM9wOR8DhXis8';
+      (Platform.isAndroid) ? '' : '';
   static const String stripPublishKey = '';
 
   static List<LocaleLanguageList> languageList = [
@@ -39,3 +39,4 @@ class AppConstants {
 
 AppDatabase db = AppDatabase();
 bool isAppMapChange = false;
+
